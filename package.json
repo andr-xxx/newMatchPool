@@ -14,7 +14,10 @@
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.config.server.js",
     "clean": "rimraf dist",
     "slate": "rimraf node_modules && npm install",
-    "lint": "eslint client server"
+    "lint": "eslint client server",
+    "seed": "cross-env BABEL_DISABLE_CACHE=1 START_PATH=./seed node seed.start.js",
+    "seed-debug": "cross-env BABEL_DISABLE_CACHE=1 START_PATH=./seed node %NODE_DEBUG_OPTION% seed.start.js",
+    "project-debug": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development node %NODE_DEBUG_OPTION% index.js"
   },
   "pre-commit": [
     "lint",
@@ -34,6 +37,7 @@
     "babel-core": "^6.9.1",
     "body-parser": "^1.15.1",
     "compression": "^1.6.2",
+    "cors": "^2.8.3",
     "cross-env": "^1.0.8",
     "cuid": "^1.3.8",
     "express": "^4.13.4",
@@ -41,6 +45,7 @@
     "intl-locales-supported": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "limax": "^1.3.0",
+    "lodash": "^4.17.4",
     "mongoose": "^4.4.20",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
@@ -82,6 +87,7 @@
     "file-loader": "^0.8.5",
     "jsdom": "^9.2.1",
     "json-loader": "^0.5.4",
+    "lorem-ipsum": "^1.0.4",
     "mock-css-modules": "^1.0.0",
     "mockgoose": "^6.0.3",
     "nock": "^8.0.0",
@@ -93,6 +99,7 @@
     "postcss-loader": "^0.9.1",
     "postcss-reporter": "^1.3.3",
     "pre-commit": "^1.1.3",
+    "random-utility": "^1.0.1",
     "react-addons-test-utils": "^15.1.0",
     "react-hot-loader": "^3.0.0-beta.2",
     "redux-ava": "^2.0.0",

@@ -1,7 +1,20 @@
 import { Router } from 'express';
 import * as PostController from '../controllers/post.controller';
+import * as WelcomeController from '../controllers/welcome.controller';
+import * as UserController from '../controllers/user.controller';
+
 const router = new Router();
 
+router.route('/content').get(WelcomeController.getContent);
+
+router.route('/user').get(UserController.getUser);
+
+router.route('/user').post(UserController.addNewUser);
+
+
+/**
+ * will be remove
+ */
 // Get all Posts
 router.route('/posts').get(PostController.getPosts);
 
